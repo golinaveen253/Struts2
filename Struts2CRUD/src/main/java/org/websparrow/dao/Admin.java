@@ -1,23 +1,10 @@
 package org.websparrow.dao;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Admin {
-	
-	// method for create connection
-	public static Connection getConnection() throws Exception {
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			return DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/ravi", "root", "root");
-		} catch (Exception e) {
-			e.printStackTrace();
-			return null;
-		}
-	}
+public class Admin extends BaseDao{
 
 	// method for save user data in database
 	public int registerUser(String uname, String uemail, String upass, String udeg) throws Exception {
